@@ -30,15 +30,15 @@ const Navbar= () => {
               />
               <div className='text-xl font-bold'>
                 ZEN
-                <span className='text-accent/70 font-light hover:!text-green-500 hover:font-bold'>
+                <span className='text-green-600 text-accent/70 font-light hover:!text-white hover:font-bold'>
                   STAYS
                 </span>
               </div>
             </div>
           </Link>
         </div>
-        <p className='text-white text-sm font-light hidden md:block'>
-          Experience property rental management that goes beyond the basics.
+         <p className='text-white text-sm font-light hidden md:block pr-20'>
+           Experience property rental management that goes beyond the basics.
         </p>
       </div>
   )

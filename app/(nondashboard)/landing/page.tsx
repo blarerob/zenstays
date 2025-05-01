@@ -2,13 +2,15 @@
 
 import React from "react";
 import HeroSection from "./HeroSection";
-import FeaturesSection from "./FeaturesSection";
+import SideMenu from "@/components/SideMenu";
+import FooterSection from "./FooterSection";
 
 const LandingPage = () => {
   return(
   <div>
       <HeroSection/>
-      <FeaturesSection />
+        <SideMenu />
+      <FooterSection />
   </div>
   )
 };

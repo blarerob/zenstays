@@ -1,6 +1,6 @@
 import React from "react";
 import { NAVBAR_HEIGHT } from "@/lib/constants";
-import "@/styles/globals.css";
+
 import Navbar from "@/components/Navbar";
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
