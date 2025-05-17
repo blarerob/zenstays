@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import '/styles/globals.css';
+import '/app/globals.css';
 
 const nextConfig: NextConfig = {
     images: {

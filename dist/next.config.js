@@ -1,4 +1,4 @@
-import '/styles/globals.css';
+import '/app/globals.css';
 const nextConfig = {
     images: {
         remotePatterns: [
