@@ -3,7 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {NAVBAR_HEIGHT} from "@/lib/constants";
+
+// Updated import path
+import { NAVBAR_HEIGHT } from "../lib/constants";
 
 const Navbar= () => {
   return (
