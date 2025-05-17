@@ -1,15 +1,17 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
-import { DollarSign, LucidePersonStanding, SquarePen, Phone, BookImage } from 'lucide-react';
+import { DollarSign, SquarePen, Phone, BookImage } from 'lucide-react';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
+import Image from 'next/image';
+const CustomImageIcon = () => (<Image src="/logo.jpeg" alt="About Us" width={24} height={24}/>);
 const navLinks = [
     { icon: DollarSign, label: 'Pricing', href: "/pricing" },
     { icon: SquarePen, label: "Free Consultation", href: "/booknow" },
-    { icon: BookImage, label: 'ZENbooks', href: "http://localhost:3001/" },
+    { icon: BookImage, label: 'ZENbooks', externalLink: "http://localhost:3001/" },
     { icon: Phone, label: 'Contact Us', href: "/aboutus#bottom" },
-    { icon: LucidePersonStanding, label: 'About Us', href: "/aboutus" },
+    { icon: CustomImageIcon, label: 'About Us', href: "/aboutus" },
 ];
 export default function SideMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,7 +27,7 @@ export default function SideMenu() {
                 <MenuIcon style={{
             fontSize: '40px',
             color: 'white',
-            backgroundColor: '#766a55',
+            backgroundColor: '#766a55', // bg-custom-color
             borderRadius: '50%',
             padding: '8px',
             cursor: 'pointer',
@@ -42,14 +44,21 @@ export default function SideMenu() {
                 },
             },
         }}>
-                {navLinks.map((link) => (<Link href={link.href} key={link.label} onClick={handleClose}>
-                        <div className="flex items-center hover:bg-gray-100 hover:w-full mt-1 gap-3 ml-2">
-                            <link.icon className="h-5 w-5 text-green-600"/>
-                            <span className="font-normal text-black text-md hover:bg-gray-100 hover:w-full flex justify-between items-center mt-1 p-2">
-                {link.label}
-              </span>
-                        </div>
-                    </Link>))}
+                {navLinks.map((link) => (link.externalLink ? (<a key={link.label} href={link.externalLink} target="_blank" rel="noopener noreferrer" onClick={handleClose}>
+                            <div className="flex items-center hover:bg-gray-100 hover:w-full mt-1 gap-3 ml-2">
+                                <link.icon className="h-5 w-5 text-green-600"/>
+                                <span className="font-normal text-black text-md hover:bg-gray-100 hover:w-full flex justify-between items-center mt-1 p-2">
+                                    {link.label}
+                                </span>
+                            </div>
+                        </a>) : link.href ? (<Link href={link.href} key={link.label} onClick={handleClose}>
+                            <div className="flex items-center hover:bg-gray-100 hover:w-full mt-1 gap-3 ml-2">
+                                <link.icon className="h-5 w-5 text-green-600"/>
+                                <span className="font-normal text-black text-md hover:bg-gray-100 hover:w-full flex justify-between items-center mt-1 p-2">
+                                    {link.label}
+                                </span>
+                            </div>
+                        </Link>) : null))}
             </Menu>
         </div>);
 }

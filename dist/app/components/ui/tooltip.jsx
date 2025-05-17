@@ -12,7 +12,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import * as React from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 function TooltipProvider(_a) {
     var { delayDuration = 0 } = _a, props = __rest(_a, ["delayDuration"]);
     return (<TooltipPrimitive.Provider data-slot="tooltip-provider" delayDuration={delayDuration} {...props}/>);

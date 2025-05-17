@@ -13,7 +13,8 @@ var __rest = (this && this.__rest) || function (s, e) {
 import * as React from "react";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { CircleIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+// Updated import path
+import { cn } from "../../lib/utils";
 function RadioGroup(_a) {
     var { className } = _a, props = __rest(_a, ["className"]);
     return (<RadioGroupPrimitive.Root data-slot="radio-group" className={cn("grid gap-3", className)} {...props}/>);

@@ -3,11 +3,11 @@ import React from 'react';
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Divider from '@mui/material/Divider';
-import { Input } from "@/components/ui/input";
+import { Input } from "../../components/ui/input";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import { HousePlus, LucideMail, UserPen } from "lucide-react";
-import FooterSection from "@/(nondashboard)/landing/FooterSection";
+import FooterSection from "../landing/FooterSection";
 import { toast } from "react-hot-toast";
 const HeroSection = () => {
     return (<div className='relative h-screen'>
@@ -25,7 +25,7 @@ const HeroSection = () => {
                  </Link>
                  <Divider orientation="vertical" flexItem style={{ borderColor: 'white', height: '50px' }}/>
                  <Link href='/listings'>
-                     <Button className='text-black bg-white hover:bg-green-500 hover:text-white
+                    <Button className='bg-[#766a55] text-white hover:bg-green-500 hover:text-white
                       rounded-lg cursor-pointer px-8 py-4 text-lg font-bold shadow-lg transform transition-transform
                       duration-300 hover:scale-105 sm:px-6 sm:py-3'>
                          <HousePlus /> Listings

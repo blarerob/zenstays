@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { NAVBAR_HEIGHT } from "@/lib/constants";
+import { NAVBAR_HEIGHT } from "../lib/constants";
 const Navbar = () => {
     return (<div className="fixed top-0 left-0 w-full z-50 flex justify-between items-center py-3 px-8 navbar text-white" style={{ height: `${NAVBAR_HEIGHT}px` }}>
         <div className='flex items-center gap-4 md:gap-6'>

@@ -13,7 +13,8 @@ var __rest = (this && this.__rest) || function (s, e) {
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+// Updated import path
+import { cn } from "../../lib/utils";
 function Select(_a) {
     var props = __rest(_a, []);
     return <SelectPrimitive.Root data-slot="select" {...props}/>;

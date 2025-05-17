@@ -1,7 +1,8 @@
 "use client";
-import Card from "@/components/Card";
-import Header from "@/components/Header";
-import Loading from "@/components/Loading";
+// Updated import paths
+import Card from "../../components/Card";
+import Header from "../../components/Header";
+import Loading from "../../components/Loading";
 import React from "react";
 class Listings extends React.Component {
     render() {

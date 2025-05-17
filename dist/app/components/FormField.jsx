@@ -1,11 +1,11 @@
 import React from "react";
 import { useFormContext, useFieldArray, } from "react-hook-form";
-import { FormControl, FormField, FormItem, FormLabel, FormMessage, } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "@/components/ui/select";
-import { Switch } from "@/components/ui/switch";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage, } from "./ui/form";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import { Textarea } from "./ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "./ui/select";
+import { Switch } from "./ui/switch";
 import { Edit, X, Plus } from "lucide-react";
 import { registerPlugin } from "filepond";
 import { FilePond } from "react-filepond";

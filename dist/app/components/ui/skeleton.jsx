@@ -9,7 +9,8 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import { cn } from "@/lib/utils";
+// Updated import path
+import { cn } from "../../lib/utils";
 function Skeleton(_a) {
     var { className } = _a, props = __rest(_a, ["className"]);
     return (<div data-slot="skeleton" className={cn("bg-accent animate-pulse rounded-md", className)} {...props}/>);

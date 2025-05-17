@@ -13,7 +13,8 @@ var __rest = (this && this.__rest) || function (s, e) {
 import * as React from "react";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { XIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+// Updated import path
+import { cn } from "../../lib/utils";
 function Sheet(_a) {
     var props = __rest(_a, []);
     return <SheetPrimitive.Root data-slot="sheet" {...props}/>;

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import globalReducer from "@/state";
+import globalReducer from "../state";
 /* REDUX STORE */
 const rootReducer = combineReducers({
     global: globalReducer,

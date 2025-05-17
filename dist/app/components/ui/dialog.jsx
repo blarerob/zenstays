@@ -13,7 +13,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { XIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 function Dialog(_a) {
     var props = __rest(_a, []);
     return <DialogPrimitive.Root data-slot="dialog" {...props}/>;

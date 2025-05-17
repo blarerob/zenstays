@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { Button } from "@mui/material";
 const exampleHouses = [
     { src: "/images/listing1.avif", alt: "House 1" },
     { src: "/images/listing2.jpeg", alt: "House 2" },

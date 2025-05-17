@@ -48,7 +48,7 @@ const HeroSection = () => {
                  <Link
                      href='/listings'
                  >
-                     <Button className='text-black bg-white hover:bg-green-500 hover:text-white
+                    <Button className='bg-[#766a55] text-white hover:bg-green-500 hover:text-white
                       rounded-lg cursor-pointer px-8 py-4 text-lg font-bold shadow-lg transform transition-transform
                       duration-300 hover:scale-105 sm:px-6 sm:py-3'>
                          <HousePlus /> Listings

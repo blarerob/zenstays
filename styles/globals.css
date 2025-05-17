@@ -1,10 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sharp&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=FontAwesome&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=ui-serif&display=swap');
-@tailwind utilities;
-@tailwind base;
-@tailwind components;
+@import 'tailwindcss';
+
 @tailwind utilities;
 
 *,

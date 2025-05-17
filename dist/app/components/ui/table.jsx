@@ -11,7 +11,8 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import * as React from "react";
-import { cn } from "@/lib/utils";
+// Updated import path
+import { cn } from "../../lib/utils";
 function Table(_a) {
     var { className } = _a, props = __rest(_a, ["className"]);
     return (<div data-slot="table-container" className="relative w-full overflow-x-auto">

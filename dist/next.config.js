@@ -1,11 +1,20 @@
+import '/styles/globals.css';
 const nextConfig = {
     images: {
-        domains: ['utfs.io'],
-        remotePatterns: [{
-                protocol: 'https',
-                hostname: 'utfs.io',
-                port: '',
-            }],
-    }
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "example.com",
+                port: "",
+                pathname: "/**",
+            },
+            {
+                protocol: "https",
+                hostname: "*.amazonaws.com",
+                port: "",
+                pathname: "/**",
+            },
+        ],
+    },
 };
 export default nextConfig;

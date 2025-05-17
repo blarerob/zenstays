@@ -12,7 +12,8 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import * as React from "react";
 import * as SliderPrimitive from "@radix-ui/react-slider";
-import { cn } from "@/lib/utils";
+// Updated import path
+import { cn } from "../../lib/utils";
 function Slider(_a) {
     var { className, defaultValue, value, min = 0, max = 100 } = _a, props = __rest(_a, ["className", "defaultValue", "value", "min", "max"]);
     const _values = React.useMemo(() => Array.isArray(value)
