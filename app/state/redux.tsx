@@ -16,7 +16,7 @@ export const makeStore = () => {
   return configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(),
+      getDefaultMiddleware().concat([]),
   });
 };
 

@@ -1,0 +1,58 @@
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+import { toast } from "sonner";
+export function cn(...inputs) {
+    return twMerge(clsx(inputs));
+}
+export function formatEnumString(str) {
+    return str.replace(/([A-Z])/g, " $1").trim();
+}
+export function formatPriceValue(value, isMin) {
+    if (value === null || value === 0)
+        return isMin ? "Any Min Price" : "Any Max Price";
+    if (value >= 1000) {
+        const kValue = value / 1000;
+        return isMin ? `$${kValue}k+` : `<$${kValue}k`;
+    }
+    return isMin ? `$${value}+` : `<$${value}`;
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function cleanParams(params) {
+    return Object.fromEntries(Object.entries(params).filter(([_, value] // eslint-disable-line @typescript-eslint/no-unused-vars
+    ) => value !== undefined &&
+        value !== "any" &&
+        value !== "" &&
+        (Array.isArray(value) ? value.some((v) => v !== null) : value !== null)));
+}
+export const withToast = async (mutationFn, messages) => {
+    const { success, error } = messages;
+    try {
+        const result = await mutationFn;
+        if (success)
+            toast.success(success);
+        return result;
+    }
+    catch (err) {
+        if (error)
+            toast.error(error);
+        throw err;
+    }
+};
+export const createNewUserInDatabase = async (user, idToken, userRole, fetchWithBQ) => {
+    var _a;
+    const createEndpoint = (userRole === null || userRole === void 0 ? void 0 : userRole.toLowerCase()) === "manager" ? "/managers" : "/tenants";
+    const createUserResponse = await fetchWithBQ({
+        url: createEndpoint,
+        method: "POST",
+        body: {
+            cognitoId: user.userId,
+            name: user.username,
+            email: ((_a = idToken === null || idToken === void 0 ? void 0 : idToken.payload) === null || _a === void 0 ? void 0 : _a.email) || "",
+            phoneNumber: "",
+        },
+    });
+    if (createUserResponse.error) {
+        throw new Error("Failed to create user record");
+    }
+    return createUserResponse;
+};

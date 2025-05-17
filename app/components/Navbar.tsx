@@ -4,8 +4,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {NAVBAR_HEIGHT} from "@/lib/constants";
-import { Button } from "@/components/ui/button";
-import {HousePlus, UserPen, Wrench} from "lucide-react";
 
 const Navbar= () => {
   return (
@@ -16,7 +14,7 @@ const Navbar= () => {
         <div className='flex items-center gap-4 md:gap-6'>
           <Link
               href='/'
-              className='cursor-pointer hover:!text-green-500'
+              className='cursor-pointer'
               scroll={false}
           >
             <div className='flex items-center gap-3'>

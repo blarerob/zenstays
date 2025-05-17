@@ -1,5 +1,19 @@
 // import { cleanParams, createNewUserInDatabase, withToast } from "@/lib/utils";
-// import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+// import {
+//   Application,
+//   Lease,
+//   Manager,
+//   Payment,
+//   Property,
+//   Tenant,
+// } from "@/types/prismaTypes";
+// import {
+//   createApi,
+//   fetchBaseQuery,
+//   FetchBaseQueryError,
+//   FetchBaseQueryMeta,
+//   QueryReturnValue
+// } from "@reduxjs/toolkit/query/react";
 // import { fetchAuthSession, getCurrentUser } from "aws-amplify/auth";
 // import { FiltersState } from ".";
 //
@@ -27,10 +41,10 @@
 //   ],
 //   endpoints: (build) => ({
 //     getAuthUser: build.query<User, void>({
-// queryFn: async (_, _queryApi, _extraoptions, fetchWithBQ) => {
+//       async queryFn(_, _queryApi, _extraoptions, fetchWithBQ): Promise<QueryReturnValue<User, FetchBaseQueryError, FetchBaseQueryMeta | undefined>> {
 //         try {
 //           const session = await fetchAuthSession();
-//           const { idToken } = session.tokens ?? {};
+//           const {idToken} = session.tokens ?? {};
 //           const user = await getCurrentUser();
 //           const userRole = idToken?.payload["custom:role"] as string;
 //
@@ -38,6 +52,7 @@
 //               userRole === "manager"
 //                   ? `/managers/${user.userId}`
 //                   : `/tenants/${user.userId}`;
+//
 //           let userDetailsResponse = await fetchWithBQ(endpoint);
 //
 //           // if user doesn't exist, create new user
@@ -55,20 +70,24 @@
 //
 //           return {
 //             data: {
-//               cognitoInfo: { ...user },
-//               userInfo: userDetailsResponse.data,
+//               cognitoInfo: {...user},
+//               userInfo: userDetailsResponse.data as Tenant | Manager,
 //               userRole,
 //             },
 //           };
-//         } catch (errorMessage) {
-//           return { error: errorMessage || "Could not fetch user data" };
-//         }
+//         } catch {}
+//         return {
+//           error: {
+//             status: 500,
+//             data: "Failed to fetch user",
+//           },
+//         };
 //       },
 //     }),
 //
 //     // property related endpoints
 //     getProperties: build.query<
-//        [],
+//         Property[],
 //         Partial<FiltersState> & { favoriteIds?: number[] }
 //     >({
 //       query: (filters) => {
@@ -104,7 +123,7 @@
 //       },
 //     }),
 //
-//     getProperty: build.query({
+//     getProperty: build.query<Property, number>({
 //       query: (id) => `properties/${id}`,
 //       providesTags: (result, error, id) => [{ type: "PropertyDetails", id }],
 //       async onQueryStarted(_, { queryFulfilled }) {
@@ -115,7 +134,7 @@
 //     }),
 //
 //     // tenant related endpoints
-//     getTenant: build.query({
+//     getTenant: build.query<Tenant, string>({
 //       query: (cognitoId) => `tenants/${cognitoId}`,
 //       providesTags: (result) => [{ type: "Tenants", id: result?.id }],
 //       async onQueryStarted(_, { queryFulfilled }) {
@@ -125,7 +144,7 @@
 //       },
 //     }),
 //
-//     getCurrentResidences: build.query({
+//     getCurrentResidences: build.query<Property[], string>({
 //       query: (cognitoId) => `tenants/${cognitoId}/current-residences`,
 //       providesTags: (result) =>
 //           result
@@ -141,8 +160,10 @@
 //       },
 //     }),
 //
-//     updateTenantSettings: build.mutation
-//     ({
+//     updateTenantSettings: build.mutation<
+//         Tenant,
+//         { cognitoId: string } & Partial<Tenant>
+//     >({
 //       query: ({ cognitoId, ...updatedTenant }) => ({
 //         url: `tenants/${cognitoId}`,
 //         method: "PUT",
@@ -158,6 +179,7 @@
 //     }),
 //
 //     addFavoriteProperty: build.mutation<
+//         Tenant,
 //         { cognitoId: string; propertyId: number }
 //     >({
 //       query: ({ cognitoId, propertyId }) => ({
@@ -177,6 +199,7 @@
 //     }),
 //
 //     removeFavoriteProperty: build.mutation<
+//         Tenant,
 //         { cognitoId: string; propertyId: number }
 //     >({
 //       query: ({ cognitoId, propertyId }) => ({
@@ -196,12 +219,12 @@
 //     }),
 //
 //     // manager related endpoints
-//     getManagerProperties: build.query({
+//     getManagerProperties: build.query<Property[], string>({
 //       query: (cognitoId) => `managers/${cognitoId}/properties`,
 //       providesTags: (result) =>
 //           result
 //               ? [
-//                 ...result.map(({ key={result} }) => ({ type: "Properties" as const, id })),
+//                 ...result.map(({ id }) => ({ type: "Properties" as const, id })),
 //                 { type: "Properties", id: "LIST" },
 //               ]
 //               : [{ type: "Properties", id: "LIST" }],
@@ -212,8 +235,10 @@
 //       },
 //     }),
 //
-//     updateManagerSettings: build.mutation
-//     ({
+//     updateManagerSettings: build.mutation<
+//         Manager,
+//         { cognitoId: string } & Partial<Manager>
+//     >({
 //       query: ({ cognitoId, ...updatedManager }) => ({
 //         url: `managers/${cognitoId}`,
 //         method: "PUT",
@@ -228,15 +253,15 @@
 //       },
 //     }),
 //
-//     createProperty: build.mutation({
+//     createProperty: build.mutation<Property, FormData>({
 //       query: (newProperty) => ({
 //         url: `properties`,
 //         method: "POST",
 //         body: newProperty,
 //       }),
-//       invalidatesTags: (result) => [
+//       invalidatesTags: () => [
 //         { type: "Properties", id: "LIST" },
-//         { type: "Managers", id: result?.manager?.id },
+//         { type: "Managers", id: 'MANAGER' },
 //       ],
 //       async onQueryStarted(_, { queryFulfilled }) {
 //         await withToast(queryFulfilled, {
@@ -247,7 +272,7 @@
 //     }),
 //
 //     // lease related enpoints
-//     getLeases: build.query({
+//     getLeases: build.query<Lease[], number>({
 //       query: () => "leases",
 //       providesTags: ["Leases"],
 //       async onQueryStarted(_, { queryFulfilled }) {
@@ -257,7 +282,7 @@
 //       },
 //     }),
 //
-//     getPropertyLeases: build.query({
+//     getPropertyLeases: build.query<Lease[], number>({
 //       query: (propertyId) => `properties/${propertyId}/leases`,
 //       providesTags: ["Leases"],
 //       async onQueryStarted(_, { queryFulfilled }) {
@@ -267,7 +292,7 @@
 //       },
 //     }),
 //
-//     getPayments: build.query({
+//     getPayments: build.query<Payment[], number>({
 //       query: (leaseId) => `leases/${leaseId}/payments`,
 //       providesTags: ["Payments"],
 //       async onQueryStarted(_, { queryFulfilled }) {
@@ -278,7 +303,10 @@
 //     }),
 //
 //     // application related endpoints
-//     getApplications: build.query({
+//     getApplications: build.query<
+//         Application[],
+//         { userId?: string; userType?: string }
+//     >({
 //       query: (params) => {
 //         const queryParams = new URLSearchParams();
 //         if (params.userId) {
@@ -298,8 +326,10 @@
 //       },
 //     }),
 //
-//     updateApplicationStatus: build.mutation
-//     ({
+//     updateApplicationStatus: build.mutation<
+//         Application & { lease?: Lease },
+//         { id: number; status: string }
+//     >({
 //       query: ({ id, status }) => ({
 //         url: `applications/${id}/status`,
 //         method: "PUT",
@@ -314,7 +344,7 @@
 //       },
 //     }),
 //
-//     createApplication: build.mutation({
+//     createApplication: build.mutation<Application, Partial<Application>>({
 //       query: (body) => ({
 //         url: `applications`,
 //         method: "POST",

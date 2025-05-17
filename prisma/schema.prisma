@@ -66,24 +66,25 @@ enum PaymentStatus {
 }
 
 model Property {
-  id                Int          @id @default(autoincrement())
+  id                Int                                   @id @default(autoincrement())
   name              String
   description       String
   pricePerMonth     Float
+  coordinates       Unsupported("geography(Point, 4326)")
   securityDeposit   Float
   applicationFee    Float
   photoUrls         String[]
   amenities         Amenity[]
   highlights        Highlight[]
-  isPetsAllowed     Boolean      @default(false)
-  isParkingIncluded Boolean      @default(false)
+  isPetsAllowed     Boolean                               @default(false)
+  isParkingIncluded Boolean                               @default(false)
   beds              Int
   baths             Float
   squareFeet        Int
   propertyType      PropertyType
-  postedDate        DateTime     @default(now())
-  averageRating     Float?       @default(0)
-  numberOfReviews   Int?         @default(0)
+  postedDate        DateTime                              @default(now())
+  averageRating     Float?                                @default(0)
+  numberOfReviews   Int?                                  @default(0)
   locationId        Int
   managerCognitoId  String
 
@@ -106,14 +107,14 @@ model Manager {
 }
 
 model Tenant {
-  id          Int    @id @default(autoincrement())
-  cognitoId   String @unique
+  id          Int        @id @default(autoincrement())
+  cognitoId   String     @unique
   name        String
   email       String
   phoneNumber String
+  favorites   Property[] @relation("TenantFavorites")
 
   properties   Property[]    @relation("TenantProperties")
-  favorites    Property[]    @relation("TenantFavorites")
   applications Application[]
   leases       Lease[]
 }

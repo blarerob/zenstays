@@ -7,8 +7,10 @@ import Divider from '@mui/material/Divider';
 import {Input} from "@/components/ui/input";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
-import {HousePlus, PhoneIcon, UserPen} from "lucide-react";
+import {HousePlus, LucideMail, UserPen} from "lucide-react";
 import FooterSection from "@/(nondashboard)/landing/FooterSection";
+import {Prisma} from "@prisma/client";
+import {toast} from "react-hot-toast";
 
 const HeroSection = () => {
 
@@ -66,13 +68,29 @@ const HeroSection = () => {
 
                  <div className="justify-center mt-14 flex items-center">
                      <Input
-                         placeholder='Enter Number Now for Free Consultation!'
+                         placeholder='Enter Email Now for Free Consultation!'
                          className="w-75 rounded-none rounded-l-xl border-none bg-white h-12"
                      />
                      <button
-                         className="bg-green-500 text-white rounded-none rounded-r-xl pr-2 pl-2 border-none hover:bg-secondary h-12"
+                         className="bg-[#766a55] text-white rounded-none
+                         rounded-r-xl pr-2 pl-2 border-none hover:bg-secondary h-12"
+                         onClick={async () => {
+                             try {
+                                 // Clear the input field
+                                 (document.querySelector('input') as HTMLInputElement).value = '';
+                                 // Show success message
+                                toast.success('Email submitted successfully!');
+                             } catch (error) {
+                                 console.error('Error submitting email:', error);
+                             }
+
+                             // Clear the input field
+                             (document.querySelector('input') as HTMLInputElement).value = '';
+// Show success message
+                             alert('Email submitted successfully!');
+                         }}
                      >
-                         <PhoneIcon />
+                         <LucideMail className='cursor-pointer'/>
                      </button>
                  </div>
              </div>

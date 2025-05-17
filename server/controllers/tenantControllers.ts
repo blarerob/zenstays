@@ -31,7 +31,7 @@ export const createTenant = async (
     res: Response
 ): Promise<void> => {
     try {
-        const { cognitoId, name, email, phoneNumber } = req.body;
+        const { cognitoId, name, email, phoneNumber, favorites } = req.body;
 
         const tenant = await prisma.tenant.create({
             data: {
@@ -39,6 +39,7 @@ export const createTenant = async (
                 name,
                 email,
                 phoneNumber,
+                favorites,
             },
         });
 
