@@ -102,7 +102,7 @@ const Card: React.FC<CardProps> = ({ property, isFavorite, onFavoriteToggle, sho
           rel="noopener noreferrer"
           className="flex items-center justify-center"
         >
-          <img
+          <Image
             src="/logo.png"
             alt="Book Direct"
             className="w-30 h-30"

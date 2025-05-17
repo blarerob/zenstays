@@ -57,7 +57,7 @@ const Card = ({ property, isFavorite, onFavoriteToggle, showFavoriteButton }) =>
       <p className="text-lg font-bold mt-8 mb-5 flex items-center justify-center">BOOK VIA</p>
       <div className="m-27 mt-2 border mb-10 border-black hover:shadow-lg">
         <a href={"http://localhost:3000"} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-          <img src="/logo.png" alt="Book Direct" className="w-30 h-30"/>
+          <Image src="/logo.png" alt="Book Direct" className="w-30 h-30"/>
         </a>
       </div>
     </div>);
