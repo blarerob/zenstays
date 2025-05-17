@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { NAVBAR_HEIGHT } from "@/lib/constants";
+import { NAVBAR_HEIGHT } from "../lib/constants";
 
-import Navbar from "@/components/Navbar";
-import SideMenu from "@/components/SideMenu";
+import Navbar from "../components/Navbar";
+import SideMenu from "../components/SideMenu";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
