@@ -9,7 +9,6 @@ import Link from "next/link";
 import {Button} from "@/components/ui/button";
 import {HousePlus, LucideMail, UserPen} from "lucide-react";
 import FooterSection from "@/(nondashboard)/landing/FooterSection";
-import {Prisma} from "@prisma/client";
 import {toast} from "react-hot-toast";
 
 const HeroSection = () => {

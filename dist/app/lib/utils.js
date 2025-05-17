@@ -38,21 +38,3 @@ export const withToast = async (mutationFn, messages) => {
         throw err;
     }
 };
-export const createNewUserInDatabase = async (user, idToken, userRole, fetchWithBQ) => {
-    var _a;
-    const createEndpoint = (userRole === null || userRole === void 0 ? void 0 : userRole.toLowerCase()) === "manager" ? "/managers" : "/tenants";
-    const createUserResponse = await fetchWithBQ({
-        url: createEndpoint,
-        method: "POST",
-        body: {
-            cognitoId: user.userId,
-            name: user.username,
-            email: ((_a = idToken === null || idToken === void 0 ? void 0 : idToken.payload) === null || _a === void 0 ? void 0 : _a.email) || "",
-            phoneNumber: "",
-        },
-    });
-    if (createUserResponse.error) {
-        throw new Error("Failed to create user record");
-    }
-    return createUserResponse;
-};

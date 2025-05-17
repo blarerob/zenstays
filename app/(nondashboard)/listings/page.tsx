@@ -4,11 +4,9 @@ import Card from "@/components/Card";
 import Header from "@/components/Header";
 import Loading from "@/components/Loading";
 import React from "react";
-import Link from "next/link";
 
 class Listings extends React.Component<{ property: never }> {
     render() {
-        const { property } = this.props;
         let isLoading;
         if (isLoading) return <Loading />;
         let error;
@@ -33,7 +31,7 @@ class Listings extends React.Component<{ property: never }> {
                         isFavorite={false}
                         onFavoriteToggle={() => {}}
                         showFavoriteButton={true}
-                        propertyLink="/listings/listing1"
+                       propertyLink="/listings/listing1"
                         style={{
                             height: "400px",
                             borderRadius: "12px",

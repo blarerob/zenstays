@@ -9,11 +9,6 @@ const UserSubmitForm = () => {
     password: "",
   });
 
-  const BookNowSubmitForm = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form Data Submitted:", formData);

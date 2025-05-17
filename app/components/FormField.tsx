@@ -1,4 +1,5 @@
 import React from "react";
+import { Control } from "react-hook-form";
 import {
   ControllerRenderProps,
   FieldValues,
@@ -48,13 +49,11 @@ interface FormFieldProps {
     | "multi-input";
   placeholder?: string;
   options?: { value: string; label: string }[];
-  accept?: string;
   className?: string;
   labelClassName?: string;
   inputClassName?: string;
   value?: string;
   disabled?: boolean;
-  multiple?: boolean;
   isIcon?: boolean;
   initialValue?: string | number | boolean | string[];
 }
@@ -65,12 +64,10 @@ export const CustomFormField: React.FC<FormFieldProps> = ({
   type = "text",
   placeholder,
   options,
-  accept,
   className,
   inputClassName,
   labelClassName,
   disabled = false,
-  multiple = false,
   isIcon = false,
   initialValue,
 }) => {
@@ -212,7 +209,7 @@ export const CustomFormField: React.FC<FormFieldProps> = ({
 };
 interface MultiInputFieldProps {
   name: string;
-  control: any;
+  control: Control<FieldValues>;
   placeholder?: string;
   inputClassName?: string;
 }

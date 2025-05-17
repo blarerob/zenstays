@@ -5,7 +5,6 @@ import Loading from "@/components/Loading";
 import React from "react";
 class Listings extends React.Component {
     render() {
-        const { property } = this.props;
         let isLoading;
         if (isLoading)
             return <Loading />;

@@ -14,7 +14,7 @@ import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
-export const CustomFormField = ({ name, label, type = "text", placeholder, options, accept, className, inputClassName, labelClassName, disabled = false, multiple = false, isIcon = false, initialValue, }) => {
+export const CustomFormField = ({ name, label, type = "text", placeholder, options, className, inputClassName, labelClassName, disabled = false, isIcon = false, initialValue, }) => {
     const { control } = useFormContext();
     const renderFormControl = (field) => {
         switch (type) {

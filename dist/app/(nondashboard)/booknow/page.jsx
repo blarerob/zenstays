@@ -6,10 +6,6 @@ const UserSubmitForm = () => {
         email: "",
         password: "",
     });
-    const BookNowSubmitForm = (e) => {
-        const { name, value } = e.target;
-        setFormData(Object.assign(Object.assign({}, formData), { [name]: value }));
-    };
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form Data Submitted:", formData);
