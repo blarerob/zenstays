@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "yarn run build && concurrently \"npx tsc -w\" \"nodemon --exec ts-node app/index.ts\" \"yarn run start\" \"yarn run next dev\"",
-    "build": "rimraf dist && npx tsc",
+   "build": "rimraf dist && npx tsc && next build",
     "start": "yarn run build && node dist/index.js",
     "lint": "next lint",
     "seed": "ts-node prisma/seed.ts",
