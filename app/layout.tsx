@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zen Stays",
+  title: "ZenStays",
   description: "Short term rental management company",
 };
 

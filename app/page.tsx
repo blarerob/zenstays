@@ -8,7 +8,7 @@ import SideMenu from "./components/SideMenu";
 const Landing = () => {
     return (
         <div>
-                <HeroSection />
+            <HeroSection />
                 <Navbar />
                 <SideMenu />
         </div>

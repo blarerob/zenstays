@@ -1,47 +1,54 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "outDir": "./dist",
-    "rootDir": "./",
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": false,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ], // Includes modern JavaScript and DOM features
+    "rootDir": "./", // Root directory of the project
+    "allowJs": false, // removes JavaScript files in the project
+    "skipLibCheck": true, // Skips type checking of declaration files for faster builds
+    "strict": true, // Enables all strict type-checking options
+    "noEmit": true, // Prevents emitting compiled files
+    "esModuleInterop": true, // Ensures compatibility with CommonJS modules
+    "module": "esnext", // Uses the latest module system
+    "moduleResolution": "bundler", // Resolves modules for modern bundlers
+    "resolveJsonModule": true, // Allows importing JSON files
+    "isolatedModules": true, // Ensures each file can be transpiled in isolation
+    "jsx": "preserve", // Preserves JSX for further processing by Next.js
+    "incremental": true, // Enables incremental compilation for faster builds
+    "paths": {
+      "@/*": [
+        "./app/*"
+      ] // Maps `@/` to the `app` directory
+    },
+    "types": [
+      "node", // Includes Node.js types
+      "react", // Includes React types
+      "react-dom", // Includes React DOM types
+      "@types/lodash", // Includes Lodash types
+      "@types/react-vis", // Includes React Vis types
+      "@types/uuid" // Includes UUID types
+    ],
+    "target": "es2017" // Targets modern JavaScript (ES2017)
+    ,
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": ["./app/*"]
-    },
-    "types": [
-      "node",
-      "react",
-      "react-dom",
-      "@types/lodash",
-      "@types/react-vis",
-      "@types/uuid"
-    ],
-    "target": "ES2017"
-    },
-    "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-      "dist/index.js"
-    ],
-    "exclude": [
-    "node_modules",
-    "dist",
-    "out"
     ]
+  },
+  "include": [
+    "**/*.ts", // Includes Next.js environment types
+    "**/*.tsx", // Includes all TypeScript files
+    ".next/types/**/*.ts", // Includes all TypeScript JSX files
+    "next-env.d.ts" // Includes Next.js generated types
+    ,
+    "dist/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules", // Excludes dependencies
+    "dist", // Excludes the distribution directory
+    "**/*.js"
+  ]
 }
