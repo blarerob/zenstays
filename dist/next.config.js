@@ -1,19 +1,11 @@
 const nextConfig = {
     images: {
-        remotePatterns: [
-            {
-                protocol: "https",
-                hostname: "example.com",
-                port: "",
-                pathname: "/**",
-            },
-            {
-                protocol: "https",
-                hostname: "*.amazonaws.com",
-                port: "",
-                pathname: "/**",
-            },
-        ],
-    },
+        domains: ['utfs.io'],
+        remotePatterns: [{
+                protocol: 'https',
+                hostname: 'utfs.io',
+                port: '',
+            }],
+    }
 };
 export default nextConfig;
