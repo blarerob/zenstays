@@ -1,17 +1,16 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
-import { DollarSign, SquarePen, Phone, BookImage } from 'lucide-react';
+import { DollarSign, LucidePersonStanding, SquarePen, Phone, BookImage } from 'lucide-react';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
-import Setting from 'lucide-react/dist/icons/settings.svg';
 
 const navLinks = [
     { icon: DollarSign, label: 'Pricing', href: "/pricing" },
     { icon: SquarePen, label: "Free Consultation", href: "/booknow" },
     { icon: BookImage, label: 'ZENbooks', href: "http://localhost:3001/" },
     { icon: Phone, label: 'Contact Us', href: "/aboutus#bottom" },
-    { icon: Setting, label: 'About Us', href: "/aboutus" },
+    { icon: LucidePersonStanding, label: 'About Us', href: "/aboutus" },
 ];
 
 export default function SideMenu() {
