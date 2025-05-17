@@ -10,6 +10,8 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import SideMenu from "@/components/SideMenu";
 
+import "@/styles/globals.css";
+
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
