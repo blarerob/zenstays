@@ -39,3 +39,52 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Build output
+dist/
+dist/cache
+dist/cache/*
+build/
+.next/
+out/
+.webpack/*
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+.env.*.local
+
+# IDE settings
+.idea/
+.vscode/
+*.iml
+
+# System files
+Thumbs.db
+*.bak
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Test output
+jest-html-reporters-*.html
+.nyc_output/
+
+# Linting cache
+.eslintcache
+
+# Miscellaneous
+*.lock
+*.gz
+*.rscinfo
+*.webpack.hot-update.json

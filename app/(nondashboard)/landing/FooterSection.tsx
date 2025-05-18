@@ -12,10 +12,10 @@ import {
 const FooterSection = () => {
   return (
      <div
-         className="absolute bottom-0 left-0 w-full justify-between items-center pt-20 px-8 text-black"
+         className="absolute bottom-0 left-0 w-full justify-between items-center pt-10 px-8 text-black"
          style={{ height: `5px` }}
      >
-      <footer className="border-t border-gray-200 py-20">
+      <footer className="border-t border-gray-200 py-10">
         <div className="max-w-4xl mx-auto px-6 sm:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4">

@@ -104,6 +104,8 @@ const Card: React.FC<CardProps> = ({ property, isFavorite, onFavoriteToggle, sho
         >
           <Image
             src="/logo.png"
+            width={120}
+            height={120}
             alt="Book Direct"
             className="w-30 h-30"
           />

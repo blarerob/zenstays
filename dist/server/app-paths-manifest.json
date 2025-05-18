@@ -1,3 +1,7 @@
 {
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/(nondashboard)/services/page": "app/(nondashboard)/services/page.js",
+  "/(nondashboard)/pricing/page": "app/(nondashboard)/pricing/page.js",
+  "/(nondashboard)/booknow/page": "app/(nondashboard)/booknow/page.js",
+  "/(nondashboard)/aboutus/page": "app/(nondashboard)/aboutus/page.js"
 }
