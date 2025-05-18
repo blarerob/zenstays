@@ -88,3 +88,21 @@ jest-html-reporters-*.html
 *.gz
 *.rscinfo
 *.webpack.hot-update.json
+
+# Ignored files
+@swc.js
+_app.js
+_buildManifest.js
+_document.js
+_error.js
+app-build-manifest.json
+app-paths-manifest.json
+build-manifest.json
+middleware-build-manifest.js
+next.js
+page.js
+page_client-reference-manifest.js
+pages-manifest.json
+server-reference-manifest.json
+webpack.js
+webpack-runtime.js
