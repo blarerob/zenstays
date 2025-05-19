@@ -39,22 +39,22 @@ const Navbar = () => {
       </p>
 
       {/* Circular Phone Icon for Small Devices */}
-      <div className="sm:block md:hidden flex items-center mr-16">
+      <div className="sm:block md:hidden flex gap-4 items-center mr-16">
         <Link href="/contactus" scroll={false}>
           <button className="bg-[#766a55] text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105">
             <PhoneIcon className="w-4 h-4" />
           </button>
         </Link>
 
-        <div className="sm:block md:hidden flex items-center mr-16">
+
           <Link href="/listings" scroll={false}>
             <button className="bg-[#766a55] text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105">
               <HousePlusIcon className="w-4 h-4" />
             </button>
           </Link>
-        </div>
 
-        <div className="sm:block md:hidden flex items-center mr-16">
+
+
           <Link href="/services" scroll={false}>
             <button className="bg-[#766a55] text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105">
               <UserPen className="w-4 h-4" />
@@ -62,7 +62,6 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-    </div>
   );
 };
 

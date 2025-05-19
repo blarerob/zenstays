@@ -33,10 +33,8 @@ const HeroSection = () => {
              transition={{duration: 0.8}}
              className="absolute inset-0 flex flex-col items-center justify-center text-center"
          >
-             <div className='absolute top-26 left-0 flex items-center gap-5 p-4 hidden sm:block'>
-                 <Link
-                     href='/services'
-                 >
+             <div className='absolute top-26 left-0 flex items-center gap-5 p-4 hidden sm:flex'>
+                 <Link href='/services'>
                      <Button className='text-white bg-green-800 hover:bg-green-700 items-center rounded-lg cursor-pointer
                          px-6 py-3 text-lg font-bold shadow-lg transform transition-transform duration-300
                          hover:scale-105 sm:px-6 sm:py-3 sd:justify-center'>
@@ -44,12 +42,10 @@ const HeroSection = () => {
                      </Button>
                  </Link>
                  <Divider orientation="vertical" flexItem style={{ borderColor: 'white', height: '50px' }} />
-                 <Link
-                     href='/listings'
-                 >
-                    <Button className='bg-[#766a55] text-white hover:bg-green-700 hover:text-white
-                      rounded-lg cursor-pointer px-8 py-4 text-lg font-bold shadow-lg transform transition-transform
-                      duration-300 hover:scale-105 sm:px-6 sm:py-3'>
+                 <Link href='/listings'>
+                     <Button className='bg-[#766a55] text-white hover:bg-green-700 hover:text-white
+                         rounded-lg cursor-pointer px-8 py-4 text-lg font-bold shadow-lg transform transition-transform
+                         duration-300 hover:scale-105 sm:px-6 sm:py-3'>
                          <HousePlus /> Listings
                      </Button>
                  </Link>
