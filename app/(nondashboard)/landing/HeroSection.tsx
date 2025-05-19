@@ -53,18 +53,16 @@ const HeroSection = () => {
                      </Button>
                  </Link>
              </div>
-             <div className='absolute top-26 right-0 flex items-center gap-5 p-4'>
-                 <Link
-                     href='/contactus'
-                     scroll={false}
-                 >
-                     <Button className='bg-white text-black text-md hover:bg-green-700 hover:text-white
-                      rounded-lg cursor-pointer px-8 py-4 text-lg font-bold shadow-lg transform transition-transform
-                      duration-300 hover:scale-105 sm:px-6 sm:py-3'>
-                         <PhoneIcon /> Contact Us
-                     </Button>
-                 </Link>
-             </div>
+
+          <div className="absolute top-26 right-0 items-center gap-5 p-4 hidden sm:block">
+                     <Link href='/contactus' scroll={false}>
+                         <Button className='bg-white text-black hover:bg-green-700 hover:text-white
+                             rounded-lg cursor-pointer px-8 py-4 text-lg font-bold shadow-lg transform transition-transform
+                             duration-300 hover:scale-105 sm:px-6 sm:py-3'>
+                             <PhoneIcon /> Contact Us
+                         </Button>
+                     </Link>
+                 </div>
 
              <div className="max-w-4xl px-16 sm:px-12 mt-16">
                  <h1 className="text-5xl font-bold text-white mt-12">

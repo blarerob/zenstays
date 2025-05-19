@@ -1,6 +1,6 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
-import {DollarSign, SquarePen, BookImage, WrenchIcon} from 'lucide-react';
+import {DollarSign, SquarePen, BookImage, WrenchIcon, HousePlusIcon} from 'lucide-react';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
@@ -20,6 +20,7 @@ type NavLink = {
 const navLinks: NavLink[] = [
     { icon: DollarSign, label: 'Pricing', href: "/pricing" },
     { icon: SquarePen, label: "Free Consultation", href: "/booknow" },
+    { icon: HousePlusIcon, label: 'Listings', href: "/listings" },
     { icon: BookImage, label: 'ZENbooks', externalLink: "http://localhost:3001/" },
     { icon: WrenchIcon, label: 'Services', href: "/services" },
     { icon: CustomImageIcon, label: 'About Us', href: "/aboutus" },
@@ -70,7 +71,7 @@ export default function SideMenu() {
                 slotProps={{
                     paper: {
                         style: {
-                            height: '23vh',
+                            height: '28vh',
                             width: '18ch',
                         },
                     },

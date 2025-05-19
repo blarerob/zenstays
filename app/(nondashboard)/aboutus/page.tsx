@@ -28,7 +28,7 @@ const sliderSettings = {
 };
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-gray-200 min-h-screen py-16 px-6">
+    <div className="bg-gradient-to-b from-gray-50 to-gray-200 f-screen py-16 px-6">
       <div className="max-w-5xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-6 animate-fadeIn">
           About Us

@@ -3,7 +3,7 @@ import { DollarSign, Star, MessageSquare, Briefcase, TrendingUp, Clock } from "l
 
 const PerformanceAndPricing = () => {
 return (
-  <div className="bg-gray-50 min-h-screen py-16 px-6">
+  <div className="bg-gray-50 f-screen py-16 px-6">
     <div className="max-w-6xl mx-auto">
       {/* Header Section */}
       <div className="text-center mb-12">

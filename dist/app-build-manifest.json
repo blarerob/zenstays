@@ -6,26 +6,41 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
     "/(nondashboard)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/(nondashboard)/layout.css",
       "static/chunks/app/(nondashboard)/layout.js"
     ],
+    "/(nondashboard)/pricing/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(nondashboard)/pricing/page.js"
+    ],
+    "/(nondashboard)/booknow/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(nondashboard)/booknow/page.js"
+    ],
+    "/(nondashboard)/services/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(nondashboard)/services/page.js"
+    ],
     "/(nondashboard)/aboutus/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(nondashboard)/aboutus/page.js"
     ],
-    "/page": [
+    "/(nondashboard)/listings/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
-    "/(nondashboard)/contactus/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(nondashboard)/contactus/page.js"
+      "static/chunks/app/(nondashboard)/listings/page.js"
     ]
   }
 }

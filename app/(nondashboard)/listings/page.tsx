@@ -14,6 +14,7 @@ class Listings extends React.Component<{ property: never }> {
         if (error) return <div>Error loading favorites</div>;
 
         return (
+            <div className="bg-gradient-to-b from-gray-50 to-gray-200 f-screen py-16 px-6">
             <div className="dashboard-container">
                 <Header
                     title="Listings"
@@ -85,6 +86,7 @@ class Listings extends React.Component<{ property: never }> {
                         }}
                     />
                 </div>
+            </div>
             </div>
         );
     }
