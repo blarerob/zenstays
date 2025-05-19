@@ -41,6 +41,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(nondashboard)/listings/page.js"
+    ],
+    "/(nondashboard)/contactus/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(nondashboard)/contactus/page.js"
     ]
   }
 }

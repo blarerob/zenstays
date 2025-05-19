@@ -1,7 +1,7 @@
 {
   "/page": "app/page.js",
-  "/(nondashboard)/booknow/page": "app/(nondashboard)/booknow/page.js",
   "/(nondashboard)/services/page": "app/(nondashboard)/services/page.js",
+  "/(nondashboard)/listings/page": "app/(nondashboard)/listings/page.js",
   "/(nondashboard)/aboutus/page": "app/(nondashboard)/aboutus/page.js",
-  "/(nondashboard)/listings/page": "app/(nondashboard)/listings/page.js"
+  "/(nondashboard)/contactus/page": "app/(nondashboard)/contactus/page.js"
 }

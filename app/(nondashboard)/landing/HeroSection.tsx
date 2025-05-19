@@ -12,6 +12,7 @@ import FooterSection from "../landing/FooterSection";
 const HeroSection = () => {
 
  return (
+
      <div className='relative h-screen'>
          <Image
              src="/cover.jpg"
@@ -86,7 +87,7 @@ const HeroSection = () => {
                  </div>
              </div>
          </motion.div>
-         <FooterSection />
+             <FooterSection />
      </div>
  );
 };
