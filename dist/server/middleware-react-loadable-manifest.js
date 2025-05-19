@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"app/(nondashboard)/aboutus/page.tsx -> react-slick\":{\"id\":\"app/(nondashboard)/aboutus/page.tsx -> react-slick\",\"files\":[\"static/chunks/_app-pages-browser_node_modules_react-slick_lib_index_js.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST='{"app/(nondashboard)/aboutus/page.tsx -> react-slick":{"id":31996,"files":["static/chunks/996.be441e5a851473eb.js"]}}';

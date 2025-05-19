@@ -1,7 +1,11 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
+  "/(nondashboard)/booknow/page": "app/(nondashboard)/booknow/page.js",
   "/(nondashboard)/contactus/page": "app/(nondashboard)/contactus/page.js",
-  "/(nondashboard)/aboutus/page": "app/(nondashboard)/aboutus/page.js",
+  "/(nondashboard)/listings/page": "app/(nondashboard)/listings/page.js",
+  "/(nondashboard)/pricing/page": "app/(nondashboard)/pricing/page.js",
   "/(nondashboard)/services/page": "app/(nondashboard)/services/page.js",
-  "/(nondashboard)/listings/page": "app/(nondashboard)/listings/page.js"
+  "/(nondashboard)/landing/page": "app/(nondashboard)/landing/page.js",
+  "/(nondashboard)/aboutus/page": "app/(nondashboard)/aboutus/page.js"
 }

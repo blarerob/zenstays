@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { PhoneIcon } from "lucide-react";
+import {HousePlusIcon, PhoneIcon, UserPen} from "lucide-react";
 
 import { NAVBAR_HEIGHT } from "../lib/constants";
 
@@ -45,6 +45,22 @@ const Navbar = () => {
             <PhoneIcon className="w-4 h-4" />
           </button>
         </Link>
+
+        <div className="sm:block md:hidden flex items-center mr-16">
+          <Link href="/listings" scroll={false}>
+            <button className="bg-[#766a55] text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105">
+              <HousePlusIcon className="w-4 h-4" />
+            </button>
+          </Link>
+        </div>
+
+        <div className="sm:block md:hidden flex items-center mr-16">
+          <Link href="/services" scroll={false}>
+            <button className="bg-[#766a55] text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105">
+              <UserPen className="w-4 h-4" />
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );

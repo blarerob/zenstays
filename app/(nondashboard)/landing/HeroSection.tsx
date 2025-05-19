@@ -33,7 +33,7 @@ const HeroSection = () => {
              transition={{duration: 0.8}}
              className="absolute inset-0 flex flex-col items-center justify-center text-center"
          >
-             <div className='absolute top-26 left-0 flex items-center gap-5 p-4'>
+             <div className='absolute top-26 left-0 flex items-center gap-5 p-4 hidden sm:block'>
                  <Link
                      href='/services'
                  >
