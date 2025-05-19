@@ -1,0 +1,2 @@
+# inside "images/" or any of its subdirectories.
+included_files = ["images/**"]
