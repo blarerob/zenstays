@@ -16,6 +16,7 @@
     "resolveJsonModule": true, // Allows importing JSON files
     "isolatedModules": true, // Ensures each file can be transpiled in isolation
     "jsx": "preserve", // Preserves JSX for further processing by Next.js
+    "typeRoots": ["./node_modules/@types", "./types"], // Specifies the directories for type definitions
     "incremental": true, // Enables incremental compilation for faster builds
     "paths": {
       "@/*": [
@@ -26,9 +27,6 @@
       "node", // Includes Node.js types
       "react", // Includes React types
       "react-dom", // Includes React DOM types
-      "@types/lodash", // Includes Lodash types
-      "@types/react-vis", // Includes React Vis types
-      "@types/uuid" // Includes UUID types
     ],
     "target": "es2017" // Targets modern JavaScript (ES2017)
     ,
@@ -42,9 +40,10 @@
     "**/*.ts", // Includes Next.js environment types
     "**/*.tsx", // Includes all TypeScript files
     ".next/types/**/*.ts", // Includes all TypeScript JSX files
-    "next-env.d.ts" // Includes Next.js generated types
-    ,
-    "dist/types/**/*.ts"
+    "next-env.d.ts", // Includes Next.js generated types
+    "dist/types/**/*.ts",
+    "styles/**/*.css",
+    "styles/**/*.scss"
   ],
   "exclude": [
     "node_modules", // Excludes dependencies

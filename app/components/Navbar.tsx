@@ -9,7 +9,7 @@ import { NAVBAR_HEIGHT } from "../lib/constants";
 const Navbar= () => {
   return (
       <div
-          className="fixed top-0 left-0 w-full z-50 flex justify-between items-center py-3 px-8 navbar text-white"
+          className="fixed top-0 left-0 w-full z-50 flex justify-between items-center py-3 px-8 navbar text-white shadow-[#064e3b] shadow-sm"
           style={{ height: `${NAVBAR_HEIGHT}px` }}
       >
         <div className='flex items-center gap-4 md:gap-6'>
@@ -29,7 +29,7 @@ const Navbar= () => {
               />
               <div className='text-xl font-bold'>
                 ZEN
-                <span className='text-green-600 text-accent/70 font-light hover:!text-white hover:font-bold'>
+                <span className='text-[#9d8c79] text-accent/70 font-semibold hover:!text-white hover:font-bold'>
                   STAYS
                 </span>
               </div>

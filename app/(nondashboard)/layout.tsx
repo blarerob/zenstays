@@ -10,6 +10,10 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import SideMenu from "../components/SideMenu";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../globals.css";
+
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
 

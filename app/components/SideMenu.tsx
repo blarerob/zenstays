@@ -1,6 +1,6 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
-import { DollarSign, SquarePen, Phone, BookImage } from 'lucide-react';
+import {DollarSign, SquarePen, BookImage, WrenchIcon} from 'lucide-react';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
@@ -21,7 +21,7 @@ const navLinks: NavLink[] = [
     { icon: DollarSign, label: 'Pricing', href: "/pricing" },
     { icon: SquarePen, label: "Free Consultation", href: "/booknow" },
     { icon: BookImage, label: 'ZENbooks', externalLink: "http://localhost:3001/" },
-    { icon: Phone, label: 'Contact Us', href: "/aboutus#bottom" },
+    { icon: WrenchIcon, label: 'Services', href: "/services" },
     { icon: CustomImageIcon, label: 'About Us', href: "/aboutus" },
 ];
 
@@ -70,7 +70,7 @@ export default function SideMenu() {
                 slotProps={{
                     paper: {
                         style: {
-                            height: '28vh',
+                            height: '23vh',
                             width: '18ch',
                         },
                     },
@@ -85,18 +85,18 @@ export default function SideMenu() {
                             rel="noopener noreferrer"
                             onClick={handleClose}
                         >
-                            <div className="flex items-center hover:bg-gray-100 hover:w-full mt-1 gap-3 ml-2">
-                                <link.icon className="h-5 w-5 text-green-600" />
-                                <span className="font-normal text-black text-md hover:bg-gray-100 hover:w-full flex justify-between items-center mt-1 p-2">
+                            <div className="flex items-center gap-3 ml-2 p-2 hover:bg-gray-100 hover:w-full">
+                                <link.icon className="h-5 w-5 text-[#566b30] flex-shrink-0" />
+                                <span className="font-normal text-black text-md flex-1">
                                     {link.label}
                                 </span>
                             </div>
                         </a>
                     ) : link.href ? (
                         <Link href={link.href} key={link.label} onClick={handleClose}>
-                            <div className="flex items-center hover:bg-gray-100 hover:w-full mt-1 gap-3 ml-2">
-                                <link.icon className="h-5 w-5 text-green-600" />
-                                <span className="font-normal text-black text-md hover:bg-gray-100 hover:w-full flex justify-between items-center mt-1 p-2">
+                            <div className="flex items-center gap-3 ml-2 p-2 hover:bg-gray-100 hover:w-full">
+                                <link.icon className="h-5 w-5 text-[#566b30] flex-shrink-0" />
+                                <span className="font-normal text-black text-md flex-1">
                                     {link.label}
                                 </span>
                             </div>

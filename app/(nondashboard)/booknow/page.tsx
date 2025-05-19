@@ -4,7 +4,8 @@ import React, { useState } from "react";
 
 const UserSubmitForm = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
   });
@@ -29,19 +30,19 @@ const UserSubmitForm = () => {
           <h2 className="text-2xl font-bold text-center mb-6">User Registration</h2>
 
           <div className="mb-4">
-            <label
-                htmlFor="fullName"
-                className="block text-gray-700 font-medium mb-2"
-            >
-              Full Name
-            </label>
+           <label
+               htmlFor="firstName"
+               className="block text-gray-700 font-medium mb-2"
+           >
+             First Name<span className="text-grey">*</span>
+           </label>
             <input
                 type="text"
-                id="fullName"
-                name="fullName"
-                value={formData.fullName}
+                id="firstName"
+                name="firstName"
+                value={formData.firstName}
                 onChange={handleChange}
-                placeholder="Enter your full name"
+                placeholder="Enter your first name"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800"
                 required
             />
@@ -49,11 +50,30 @@ const UserSubmitForm = () => {
 
           <div className="mb-4">
             <label
-                htmlFor="email"
+                htmlFor="lastName"
                 className="block text-gray-700 font-medium mb-2"
             >
-              Email
+              Last Name<span className="text-grey">*</span>
             </label>
+            <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                placeholder="Enter your last name"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800"
+                required
+            />
+          </div>
+
+          <div className="mb-4">
+           <label
+               htmlFor="email"
+               className="block text-gray-700 font-medium mb-2"
+           >
+             Email<span className="text-grey">*</span>
+           </label>
             <input
                 type="email"
                 id="email"
@@ -76,30 +96,9 @@ const UserSubmitForm = () => {
             <input
                 type="integer"
                 id="phoneNumber"
-                name="phoneNumber"
-                value={'phoneNumber'}
                 onChange={handleChange}
                 placeholder="Enter your phone number"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800"
-            />
-          </div>
-
-          <div className="mb-6">
-            <label
-                htmlFor="password"
-                className="block text-gray-700 font-medium mb-2"
-            >
-              Password
-            </label>
-            <input
-                type="password"
-                id="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                placeholder="Enter your password"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800"
-                required
             />
           </div>
 

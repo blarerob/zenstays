@@ -4,12 +4,10 @@ import React from 'react';
 import Image from "next/image";
 import {motion} from "framer-motion";
 import Divider from '@mui/material/Divider';
-import {Input} from "@/components/ui/input";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
-import {HousePlus, LucideMail, UserPen} from "lucide-react";
+import {HousePlus, PhoneIcon, SquarePen, UserPen} from "lucide-react";
 import FooterSection from "../landing/FooterSection";
-import {toast} from "react-hot-toast";
 
 const HeroSection = () => {
 
@@ -26,7 +24,7 @@ const HeroSection = () => {
 
          <div
              className="absolute inset-0"
-             style={{backgroundColor: "rgba(0, 0, 0, 0.4)"}}
+             style={{backgroundColor: "rgba(0, 0, 0, 0.3)"}}
          />
          <motion.div
              initial={{opacity: 0, y: 20}}
@@ -48,10 +46,22 @@ const HeroSection = () => {
                  <Link
                      href='/listings'
                  >
-                    <Button className='bg-[#766a55] text-white hover:bg-green-500 hover:text-white
+                    <Button className='bg-[#766a55] text-white hover:bg-green-700 hover:text-white
                       rounded-lg cursor-pointer px-8 py-4 text-lg font-bold shadow-lg transform transition-transform
                       duration-300 hover:scale-105 sm:px-6 sm:py-3'>
                          <HousePlus /> Listings
+                     </Button>
+                 </Link>
+             </div>
+             <div className='absolute top-26 right-0 flex items-center gap-5 p-4'>
+                 <Link
+                     href='/contactus'
+                     scroll={false}
+                 >
+                     <Button className='bg-white text-black text-md hover:bg-green-700 hover:text-white
+                      rounded-lg cursor-pointer px-8 py-4 text-lg font-bold shadow-lg transform transition-transform
+                      duration-300 hover:scale-105 sm:px-6 sm:py-3'>
+                         <PhoneIcon /> Contact Us
                      </Button>
                  </Link>
              </div>
@@ -60,36 +70,20 @@ const HeroSection = () => {
                  <h1 className="text-5xl font-bold text-white mt-12">
                      Experience property rental management that goes beyond the basics.
                  </h1>
-                 <p className="text-xl text-white mt-4">
+                 <p className="text-xl text-white font-semibold mt-4">
                      Zenstays seamlessly integrates property care, tenant satisfaction, and financial growth
                      for a stress-free, rewarding rental experience.
                  </p>
 
                  <div className="justify-center mt-14 flex items-center">
-                     <Input
-                         placeholder='Enter Email Now for Free Consultation!'
-                         className="w-75 rounded-none rounded-l-xl border-none bg-white h-12"
-                     />
                      <button
-                         className="bg-[#766a55] text-white rounded-none
-                         rounded-r-xl pr-2 pl-2 border-none hover:bg-secondary h-12"
-                         onClick={async () => {
-                             try {
-                                 // Clear the input field
-                                 (document.querySelector('input') as HTMLInputElement).value = '';
-                                 // Show success message
-                                toast.success('Email submitted successfully!');
-                             } catch (error) {
-                                 console.error('Error submitting email:', error);
-                             }
-
-                             // Clear the input field
-                             (document.querySelector('input') as HTMLInputElement).value = '';
-// Show success message
-                             alert('Email submitted successfully!');
+                         className="bg-[#766a55] text-white rounded-lg cursor-pointer px-8 py-4 text-lg font-bold shadow-lg transform transition-transform
+                      duration-300 hover:scale-105 sm:px-6 sm:py-3"
+                         onClick={() => {
+                             window.location.href = '/booknow';
                          }}
                      >
-                         <LucideMail className='cursor-pointer'/>
+                        <SquarePen className='inline-block cursor-pointer mr-2' /> Free Consultation
                      </button>
                  </div>
              </div>

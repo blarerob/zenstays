@@ -136,3 +136,16 @@ html, body {
 .content {
   flex: 1;
 }
+
+.center-fade .slick-slide {
+  opacity: 1; /* Faded opacity for non-centered slides */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.center-fade .slick-center {
+  opacity: 0.5; /* Full opacity for the centered slide */
+}
+
+.center-fade .slick-slide:not(.slick-center) {
+  opacity: 1; /* Fade effect for both left and right slides */
+}

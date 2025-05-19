@@ -17,8 +17,8 @@ return (
 
         {/* One Time Fee Promise Section */}
         <div className="bg-white shadow-md shadow-green-800 rounded-lg mb-10 p-4">
-            <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
-                One Time Fee Promise
+            <h2 className="text-3xl font-bold text-green-800 text-center mb-6">
+                One Time Fee <span className='text-black'>Promise</span>
             </h2>
             <ul className=" text-gray-600 space-y-2 text-center">
                 <li><span className="text-green-600">&#10003;</span> No hidden charges or costs</li>
