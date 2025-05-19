@@ -39,10 +39,10 @@ const Navbar = () => {
       </p>
 
       {/* Circular Phone Icon for Small Devices */}
-      <div className="sm:block md:hidden flex items-center mr-12">
+      <div className="sm:block md:hidden flex items-center mr-16">
         <Link href="/contactus" scroll={false}>
           <button className="bg-[#766a55] text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105">
-            <PhoneIcon className="w-3 h-3" />
+            <PhoneIcon className="w-4 h-4" />
           </button>
         </Link>
       </div>
