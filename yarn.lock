@@ -2184,6 +2184,11 @@
     "@emnapi/runtime" "^1.4.0"
     "@tybys/wasm-util" "^0.9.0"
 
+"@netlify/plugin-nextjs@^5.11.1":
+  version "5.11.1"
+  resolved "https://registry.npmjs.org/@netlify/plugin-nextjs/-/plugin-nextjs-5.11.1.tgz#d505d9fffc746d8af7932133536d94d443c1ce53"
+  integrity sha512-JD4JtrhW3R0uDaROfNzmhVoYFvj+GS2ARq7YXVXNFxo+rNyU4wJ6nuDZFTsuoEp4nbIVsm2oPaXyjgqk4pd1EA==
+
 "@next/env@15.4.0-canary.9":
   version "15.4.0-canary.9"
   resolved "https://registry.npmjs.org/@next/env/-/env-15.4.0-canary.9.tgz#dfbef9f6e9cf564670114329ef197d50ca8c484d"
